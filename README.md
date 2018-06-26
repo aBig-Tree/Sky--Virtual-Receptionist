@@ -1,5 +1,5 @@
 # Sky--Virtual-Receptionist
-A simple app that uses zapier hooks and a program of your choice (e.g. pushbullet, slack) to greet guests at the door.  Add it to an Android tablet or an old iPad.
+Sky is a simple app that uses zapier hooks and a messaging program of your choice (e.g. pushbullet, slack) to greet guests at the door and notify whoever you choose.  Add her to an Android tablet or an old iPad.  Sky will notify you when someone visits your office.
 
 Created by: Steve Johnson @aBiG_Tree
 Version: 1.0
