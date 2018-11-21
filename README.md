@@ -25,7 +25,7 @@ Instructions
 9. If your're on iOS, go into the accessibility settings and turn on 'Guided Access' to prevent people leaving the browser.  It'll walk you through it.
 10. That's it!  You can now push out updates by updating the file via FTP and the tablet will pull them through overnight.
 
-Optional (For The In/Out System)
+Optional: For The In Out System
 11. Add your users names into the top next to $user1 etc.
 12. In Zapier, create a webhook and place it next to $ZapierURL.  Leave the ?employee= part in.
 13. Copy and paste everything between <div class="features-block-box in-out"> and the closing div as many times as you need.  Make sure you update the $user number for each one as you go sequentially.  
