@@ -45,82 +45,25 @@ function getCurrentTime()
 </script>
 <style>
 body {background-color: #033047; font-family: Arial, Helvetica, sans-serif; }
-
 div.logo {text-align: center; display: block;}
-
 iframe {display: none;}
-    
-input[type=submit] {
-    width: 100%; 
-    height: 100%; 
-    color: #fff; 
-    font-size:20pt; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    white-space: normal;
-    padding: 15px 5px 15px 5px;
-    margin: 2px 0;
-    border: none;
-}
- 
+input[type=submit] {width: 100%; height: 100%; color: #fff; font-size:20pt; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); white-space: normal; padding: 15px 5px 15px 5px; margin: 2px 0; border: none;}
 input.visit {background-color: #93c447;}
 input.delivery {background-color: #009acd;}
-
 textarea,
 input.text,
 input[type="text"],
 input[type="button"],
 input[type="submit"],
-.input-checkbox { /* Get Off My Lawn!!! - tell iOS to behave */
--webkit-appearance: none;
-border-radius: 0;
-}
-
-.features-block {
-	display: inline-block; 
-	width: 100%;
-}
-
-.features-block-box {
-	width: auto; 
-	min-width: 230px; 
-	padding: 10px; 
-	cursor: pointer; 
-	float: left;
-}
-
-h1.category.visitor {
-	font-size: 26pt; 
-	color: #fff; 
-	padding: 0 10px;
-	margin-bottom: 0;
-}
-
-.ConfirmationHide {
-	opacity: 0;
-}
-
-.ConfirmationShow {
-	-o-transition: opacity 3s; 
-	-moz-transition: opacity 3s; 
-	-webkit-transition: opacity 3s; 
-	transition: opacity 3s; 
-	opacity:1;
-}
-
-#ConfirmationMessage {
-    background: #93c447;
-    font-size: 30pt;
-    color: #fff;
-    display: block;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 99;
-    padding: 30px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+.input-checkbox {-webkit-appearance: none; border-radius: 0;}/* Get Off My Lawn!!! - tell iOS to behave */
+.features-block {display: inline-block; width: 100%;}
+.features-block-box {width: auto; min-width: 230px; padding: 10px; cursor: pointer; float: left;}
+h1.category.visitor {font-size: 26pt; color: #fff; padding: 0 10px;	margin-bottom: 0;}
+.ConfirmationHide {opacity: 0;}
+.ConfirmationShow {-o-transition: opacity 1s; -moz-transition: opacity 1s; -webkit-transition: opacity 1s; transition: opacity 1s; opacity:1;}
+#ConfirmationMessage {background: #93c447; font-size: 30pt; color: #fff; display: block; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 99; padding: 30px 0; text-align: center; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);}
+.staff-screens {top: 0; right: 0; display: block; position: absolute;}
+.staff-screens a {width: 300px; color: transparent; padding: 50px; border: none;}
 
 @media screen and (max-width: 600px) {
     .features-block {display: block; max-width: 100%;}
@@ -130,15 +73,14 @@ h1.category.visitor {
     #ConfirmationMessage {padding: 10px 0 10px 0; font-size: 20pt; background: #68a227;}
     h1.category.visitor {font-size: 20pt; text-align: center;}
 }
-
 </style>
 </head>
 
 <body>
 <!--
 Created by: Steve Johnson @aBiG_Tree
-Version: 1.0
-Date: 26 June 2018
+Version: 1.1
+Date: 21 November 2018
 Summary: Quick and dirty way of having a professional looking virtual receptionist.  Intended for small companies, otherwise the notifications would be just stupid.
 
 Requirements:
@@ -159,6 +101,8 @@ Instructions
 8. On your tablet, download a fullscreen browser and browse to your file (do a test on something off the network to check the block worked).
 9. If your're on iOS, go into the accessibility settings and turn on 'Guided Access' to prevent people leaving the browser.  It'll walk you through it.
 10. That's it!  You can now push out updates by updating the file via FTP and the tablet will pull them through overnight.
+
+OPTIONAL:  Use the reception-staff-app.php file to enable staff to sign in and out of a building.  We use it for fire safety.
 
 Notes
 This probably isn't that tidy and I expect others could improve it - go for it!  I initially started it because as a small business, we don't have a receptionist.  So visitors and people delivering parcels would just wander in and as i was nearest the door, they'd come to me (I don't people all that well!!).  I then started to look into various solutions, but I was amazed at the amount of crap out there.  We already had an old tablet knocking around, so this only cost us about £60 all in.  Anyway, I started tinkering and ended up with this after a few iterations.  Hopefully it'll help a few people out.
@@ -182,6 +126,11 @@ Feel free to use this, but it would be nice if you credited me.  Cheers!
 
 <div class="logo"><img width="250px" src="[YOUR LOGO]"></div> <!-- Use an SVG logo to make it look loooveeelllyy-->
 
+<!-- This section can be deleted if you aren't implementing the In/OUT system.  It places a hidden div at the top right of the page, which your users can tap to access the In/Out screen. -->
+<div class="staff-screens">
+	<a href="/reception/reception-staff-app.php">Staff Log In</a>
+</div>
+			
 <h1 style="margin-top: 5px;" class="category visitor">I'm here to see...</h1>
 
 <div class="features-block">
