@@ -25,6 +25,13 @@ Instructions
 9. If your're on iOS, go into the accessibility settings and turn on 'Guided Access' to prevent people leaving the browser.  It'll walk you through it.
 10. That's it!  You can now push out updates by updating the file via FTP and the tablet will pull them through overnight.
 
+Optional (For The In/Out System)
+11. Add your users names into the top next to $user1 etc.
+12. In Zapier, create a webhook and place it next to $ZapierURL.  Leave the ?employee= part in.
+13. Copy and paste everything between <div class="features-block-box in-out"> and the closing div as many times as you need.  Make sure you update the $user number for each one as you go sequentially.  
+14. Also update the $user numbers and add in the new names towards the top of page 
+15. Update the URL in the javascript at the bottom of the page - next to window.location
+
 Notes
 This probably isn't that tidy and I expect others could improve it - go for it!  I initially started it because as a small business, we don't have a receptionist.  So visitors and people delivering parcels would just wander in and as i was nearest the door, they'd come to me (I don't people all that well!!).  I then started to look into various solutions, but I was amazed at the amount of crap out there.  We already had an old tablet knocking around, so this only cost us about £60 all in.  Anyway, I started tinkering and ended up with this after a few iterations.  Hopefully it'll help a few people out.
 
