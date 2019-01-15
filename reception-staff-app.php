@@ -4,20 +4,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta http-equiv="refresh" content="10;url=[YOUR reception-app URL]/reception-app.php" />
 <style>
 body {background-color: #033047; font-family: Arial, Helvetica, sans-serif; }
 iframe {display: none;}
-form {display: inline-block; width: 115px;}
+form {display: inline-block; width: 49%;}
+
 .clocking-container {background: #000;}
 .clocking-container h1 {font-size: 18pt; text-align: center; padding: 10px 0; margin: 0; color: #fff;}
 .clocking-options {width: 100%; display: inline-block;}
+
 input[type=submit] {height: 100%; color: #fff; font-size:17pt; white-space: normal; padding: 8px 5px; margin: 0; border: none;}
 input.clocking-box.clocking-in[type=submit] {width: 100%; background: #93c447;}
 input.clocking-box.clocking-out[type=submit] {width: 100%; background: #f12c2c;}
+
 textarea, input.text, input[type="text"], input[type="button"], input[type="submit"], .input-checkbox {-webkit-appearance: none; border-radius: 0;}/* Get Off My Lawn!!! - tell iOS to behave */
 .features-block {display: inline-block; width: 100%;}
-.features-block-box {width: auto; min-width: 230px; padding: 20px 10px; float: left;}
+.features-block-box {width: auto; min-width: 230px; padding: 10px; float: left;}
+
+
 @media screen and (max-width: 600px) {
     .features-block {display: block; max-width: 100%;}
     .features-block-box {display: inline-block; width: 100%; float: none; padding: 0;}   
@@ -115,11 +123,12 @@ $user3 = "Another Person";
 </style>
 
 <script>
+// Morning IN event
 function clickEventIN() {
 	ConfirmationPopupIN();
 
     var timer = setTimeout(function() {
-        window.location='YOUR_WEB_ADDRESS/reception-app.html'
+        window.location='[YOUR-WEB-ADDRESS]/reception-app.php'
     }, 2000);
 }
 
@@ -129,12 +138,12 @@ function ConfirmationPopupIN() {
        setTimeout(function() {ConfirmationMessageIN.className="ConfirmationHide"; }, 5000);
 }
 
-// Evening
+// Evening OUT event
 function clickEventOUT() {
 	ConfirmationPopupOUT();
 
     var timer = setTimeout(function() {
-        window.location='YOUR_WEB_ADDRESS/reception-app.html'
+        window.location='[YOUR-WEB-ADDRESS]/reception-app.php'
     }, 2000);
 }
 
