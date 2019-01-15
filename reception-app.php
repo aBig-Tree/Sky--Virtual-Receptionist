@@ -4,6 +4,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <script type="text/javascript">
 // this will be used to refresh the page automatically overnight.  Some fullscreen browsers suck on tablets when it comes to refreshing pages.  This helps a lot.
 function getCurrentTime()
@@ -42,12 +45,11 @@ function getCurrentTime()
 			location.reload(true);
 }
 </script>
-</script>
 <style>
 body {background-color: #033047; font-family: Arial, Helvetica, sans-serif; }
 div.logo {text-align: center; display: block;}
 iframe {display: none;}
-input[type=submit] {width: 100%; height: 100%; color: #fff; font-size:20pt; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); white-space: normal; padding: 15px 5px 15px 5px; margin: 2px 0; border: none;}
+input[type=submit] {width: 100%; height: 100%; color: #fff; font-size:20pt; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); white-space: normal; padding: 13px 5px 13px 5px; margin: 2px 0; border: none;}
 input.visit {background-color: #93c447;}
 input.delivery {background-color: #009acd;}
 textarea,
@@ -62,6 +64,8 @@ h1.category.visitor {font-size: 26pt; color: #fff; padding: 0 10px;	margin-botto
 .ConfirmationHide {opacity: 0;}
 .ConfirmationShow {-o-transition: opacity 1s; -moz-transition: opacity 1s; -webkit-transition: opacity 1s; transition: opacity 1s; opacity:1;}
 #ConfirmationMessage {background: #93c447; font-size: 30pt; color: #fff; display: block; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 99; padding: 30px 0; text-align: center; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);}
+.time {bottom: 0; right: 0; float: right; position: absolute; padding: 20px; color: #fff;}
+
 .staff-screens {top: 0; right: 0; display: block; position: absolute;}
 .staff-screens a {width: 300px; color: transparent; padding: 50px; border: none;}
 
@@ -122,13 +126,16 @@ Feel free to use this, but it would be nice if you credited me.  Cheers!
 	<!-- This section forces the browser to refresh the page at midnight every night using the javascript in the header. -->
 		<body onload="setInterval('getCurrentTime()', 1000);">
 		<div id="time" style="display:none;"></div>
+<?php  
+$ZapierURL = "https://hooks.zapier.com/hooks/catch/[YOUR-ZAPIER-CATCH-HOOK]/";
+?>
 <!-- DO NOT DELETE -->
 
 <div class="logo"><img width="250px" src="[YOUR LOGO]"></div> <!-- Use an SVG logo to make it look loooveeelllyy-->
 
-<!-- This section can be deleted if you aren't implementing the In/OUT system.  It places a hidden div at the top right of the page, which your users can tap to access the In/Out screen. -->
+<!-- This section can be deleted if you aren't implementing the IN/OUT system.  It places a hidden div at the top right of the page, which your users can tap to access the In/Out screen. -->
 <div class="staff-screens">
-	<a href="/reception/reception-staff-app.php">Staff Log In</a>
+	<a href="[YOUR-URL]/reception-staff-app.php">Staff Log In</a>
 </div>
 			
 <h1 style="margin-top: 5px;" class="category visitor">I'm here to see...</h1>
@@ -136,26 +143,26 @@ Feel free to use this, but it would be nice if you credited me.  Cheers!
 <div class="features-block">
 <!-- Copy and paste as many of these as you need.  Be sure to change the value, catch hook and the persons name that we append to the catch hook -->
 	<div class="features-block-box">
-		<form action="https://hooks.zapier.com/hooks/catch/[YOUR-CATCH-HOOK]/?visitor=They're+here+to+see+Bob" method="post" target="dummyframe">
-	  		<input class="visit" type="submit" onclick="ConfirmationPopup()" value="Bob">
+		<form action="<?php echo $ZapierURL ?>?visitor=They're+here+to+see+Bob+Green" method="post" target="dummyframe">
+	  		<input class="visit" type="submit" onclick="ConfirmationPopup()" value="Bob Green">
 		</form> 
 	</div>
 
 	<div class="features-block-box">
-		<form action="https://hooks.zapier.com/hooks/catch/[YOUR-CATCH-HOOK]/?visitor=They're+here+to+see+June" method="post" target="dummyframe">
-	  		<input class="visit" type="submit" onclick="ConfirmationPopup()" value="June">
+		<form action="<?php echo $ZapierURL ?>?visitor=They're+here+to+see+June+Red" method="post" target="dummyframe">
+	  		<input class="visit" type="submit" onclick="ConfirmationPopup()" value="June Red">
 		</form> 
 	</div>
 
 	<div class="features-block-box">
-		<form action="https://hooks.zapier.com/hooks/catch/[YOUR-CATCH-HOOK]/?visitor=They're+here+to+see+Steve" method="post" target="dummyframe">
-	  		<input class="visit" type="submit" onclick="ConfirmationPopup()" value="Steve">
+		<form action="<?php echo $ZapierURL ?>?visitor=They're+here+to+see+Steve+Orange" method="post" target="dummyframe">
+	  		<input class="visit" type="submit" onclick="ConfirmationPopup()" value="Steve Orange">
 		</form> 
 	</div>
 
 	<div class="features-block-box">
-		<form action="https://hooks.zapier.com/hooks/catch/[YOUR-CATCH-HOOK]/?visitor=They're+here+to+see+Wilma" method="post" target="dummyframe">
-	  		<input class="visit" type="submit" onclick="ConfirmationPopup()" value="Wilma">
+		<form action="<?php echo $ZapierURL ?>?visitor=They're+here+to+see+Wilma+Purple" method="post" target="dummyframe">
+	  		<input class="visit" type="submit" onclick="ConfirmationPopup()" value="Wilma Purple">
 		</form> 
 	</div>
 </div>
@@ -169,13 +176,13 @@ Feel free to use this, but it would be nice if you credited me.  Cheers!
 <div class="features-block">
 
 	<div class="features-block-box">
-	<form action="https://hooks.zapier.com/hooks/catch/[YOUR-CATCH-HOOK]/?visitor=They+are+here+to+deliver+a+parcel" method="post" target="dummyframe">
+	<form action="<?php echo $ZapierURL ?>?visitor=They+are+here+to+deliver+a+parcel" method="post" target="dummyframe">
 	  <input class="delivery" type="submit" onclick="ConfirmationPopup()" value="Deliver a Parcel">
 	</form> 
 	</div>
 
 	<div class="features-block-box">
-	<form action="https://hooks.zapier.com/hooks/catch/[YOUR-CATCH-HOOK]/?visitor=They+are+here+with+FOOOOOD" method="post" target="dummyframe">
+	<form action="<?php echo $ZapierURL ?>?visitor=They+are+here+with+FOOOOOD" method="post" target="dummyframe">
 	  <input class="delivery" type="submit" onclick="ConfirmationPopup()" value="Deliver Food">
 	</form> 
 	</div>
